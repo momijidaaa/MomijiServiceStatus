@@ -1,0 +1,29 @@
+name = "momiji-status-worker"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[triggers]
+crons = ["*/1 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "momiji-status"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[vars]
+CHECK_TIMEOUT_MS = "10000"
+DATA_RETENTION_DAYS = "60"
+ALLOWED_ORIGIN = "https://status.momijiweb.jp"
+
+[env.production]
+name = "momiji-status-worker"
+
+[env.production.vars]
+CHECK_TIMEOUT_MS = "10000"
+DATA_RETENTION_DAYS = "60"
+ALLOWED_ORIGIN = "https://status.momijiweb.jp"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "momiji-status"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"

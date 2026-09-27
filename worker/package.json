@@ -1,1 +1,17 @@
-
+{
+  "name": "momiji-status-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create momiji-status",
+    "db:migrate:local": "wrangler d1 execute momiji-status --local --file=../database/schema.sql",
+    "db:migrate:remote": "wrangler d1 execute momiji-status --remote --file=../database/schema.sql",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
