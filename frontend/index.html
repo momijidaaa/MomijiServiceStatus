@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momiji Status</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
 
+    <header class="header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-icon">🍁</span>
+                <span class="brand-name">Momiji Status</span>
+            </div>
+            <div class="last-updated" id="lastUpdated">Last updated: --:--:--</div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="overall-card" id="overallCard">
+            <div class="overall-icon" id="overallIcon">🟢</div>
+            <div class="overall-text">
+                <div class="overall-title" id="overallTitle">All Systems Operational</div>
+                <div class="overall-subtitle" id="overallSubtitle">すべてのサービスが正常に稼働しています</div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">WEB</h2>
+            <div class="service-grid" id="webServices"></div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">BOT</h2>
+            <div class="service-grid" id="botServices"></div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">UPTIME</h2>
+            <div class="uptime-summary" id="uptimeSummary"></div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">INCIDENT HISTORY</h2>
+            <div class="incident-list" id="incidentList">
+                <div class="empty-state">障害履歴はありません</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span>Momiji Status &copy; momijiweb.jp</span>
+    </footer>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modalContent"></div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/status.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
