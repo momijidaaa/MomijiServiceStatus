@@ -25,10 +25,10 @@ function renderServiceCard(service) {
     card.className = 'service-card';
     card.addEventListener('click', () => openServiceModal(service.id));
 
-    const responseRow = service.category === 'bot' && service.responseTime === null
+    const hasResponseTime = service.responseTime !== null && service.responseTime !== undefined;
+    const responseRow = service.category === 'bot' && !hasResponseTime
         ? ''
-        : `<div class="meta-row"><span>Response</span><span>${service.responseTime !== null ? service.responseTime + ' ms' : '-'}</span></div>`;
-
+        : `<div class="meta-row"><span>Response</span><span>${hasResponseTime ? service.responseTime + ' ms' : '-'}</span></div>`;
     card.innerHTML = `
         <div class="service-card-top">
             <div class="service-name">${escapeHtml(service.name)}</div>
