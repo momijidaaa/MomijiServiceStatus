@@ -8,7 +8,7 @@ crons = ["*/1 * * * *"]
 [[d1_databases]]
 binding = "DB"
 database_name = "momiji-status"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "52eacfda-0936-4448-b214-e719a7a9c46b"
 
 [vars]
 CHECK_TIMEOUT_MS = "10000"
@@ -26,4 +26,4 @@ ALLOWED_ORIGIN = "https://status.momijiweb.jp"
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "momiji-status"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "52eacfda-0936-4448-b214-e719a7a9c46b"
